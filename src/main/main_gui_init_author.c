@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main_gui_init_author.c                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dorange- <dorange-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/21 18:38:46 by dorange-          #+#    #+#             */
-/*   Updated: 2020/03/05 16:40:36 by dorange-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "doom.h"
 
 void	ft_main_gui_init_win_author_1(t_list *head)
@@ -62,7 +50,7 @@ void	ft_main_gui_init_win_author_3(t_list *head)
 		SDL_MOUSEBUTTONUP, 0);
 	ft_gui_elem_init(&elem->child, "win_author_image", \
 		(t_gui_coord){0, 0, 0}, \
-		(t_gui_coord){WIN_W, WIN_H, 0});
+		(t_gui_coord){WIN_WIDTH, WIN_HEIGHT, 0});
 	ft_gui_elem_set_image(elem->child, "./Textures/bloody_game.jpg");
 	ft_gui_elem_set_parent(head, elem->child);
 }

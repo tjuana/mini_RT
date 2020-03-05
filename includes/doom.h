@@ -1,21 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   doom.h                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dorange- <dorange-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 19:02:58 by dorange-          #+#    #+#             */
-/*   Updated: 2020/03/05 17:21:27 by dorange-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef DOOM_H
 # define DOOM_H
 
 # include "SDL2/SDL.h"
 # include "SDL2/SDL_thread.h"
 # include "SDL2/SDL_ttf.h"
+# include "SDL2/SDL_image.h"
+# include "SDL2/SDL_mixer.h"
 
 # include <pthread.h>
 # include <string.h>
@@ -29,13 +19,10 @@
 # include "const.h"
 
 # include "algebra.h"
-# include "file.h"
 
 # include "general_struct.h"
 # include "gui_struct.h"
 # include "func_struct.h"
-
-# include "wolf3d.h"
 
 # include "func_func.h"
 # include "gui_func.h"

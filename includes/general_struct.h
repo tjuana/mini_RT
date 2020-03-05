@@ -1,22 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   general_struct.h                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dorange- <dorange-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 18:55:40 by dorange-          #+#    #+#             */
-/*   Updated: 2020/03/05 16:23:36 by dorange-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef GENERAL_STRUCT_H
 # define GENERAL_STRUCT_H
 
 # include "doom.h"
 
 # include <libft.h>
-# include "file.h"
 # include "gui_struct.h"
 # include "SDL2/SDL_mixer.h"
 
@@ -85,7 +72,6 @@ typedef struct			s_wolf3d
 	int					enemy_count;
 	t_list				*txtr;
 	int					txtr_count;
-	t_file				file;
 	t_list				*vertex;
 	t_list				*sprites;
 	t_sdl				*sdl;

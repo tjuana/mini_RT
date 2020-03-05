@@ -6,7 +6,7 @@
 #    By: dorange- <dorange-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 7777/07/07 11:40:58 by tjuana            #+#    #+#              #
-#    Updated: 2020/03/05 17:23:41 by dorange-         ###   ########.fr        #
+#    Updated: 2020/03/05 17:47:32 by dorange-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,22 +37,17 @@ LIBFT_HEADERS = ./libft/includes
 SDL_HEADERS = include/
 
 HEADERS_DIRECTORY = ./includes/
-HEADERS_LIST = doom.h\
-			algebra.h \
-			const.h \
-			file.h \
-			func_func.h \
-			func_struct.h \
-			general_struct.h \
-			gui_func.h \
-			gui_struct.h \
-			constants.h \
-			door.h \
-			engine.h \
-			events.h \
-			player.h \
-			texture.h \
-			wolf3d.h
+HEADERS_LIST = \
+doom.h \
+algebra.h \
+const.h \
+func_func.h \
+func_struct.h \
+general_struct.h \
+gui_func.h \
+gui_struct.h \
+render_func.h
+
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 DIRECTORY =  $(shell pwd)
