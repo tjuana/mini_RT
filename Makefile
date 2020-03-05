@@ -31,7 +31,7 @@ DIRECTORY =  $(shell pwd)
 
 SRCS_DIRECTORY = ./src/
 
-SRCS_LIST = main.c\
+SRCS_LIST = main.c
 
 
 OBJS_DIRECTORY = objects/
@@ -46,7 +46,7 @@ RESET = \033[0m
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS_DIRECTORY) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS) $(OBJS_DIRECTORY) 
 	$(CC) $(FLAGS) $(LIBRARIES) $(INCLUDES) $(OBJS) -o $(NAME)
 	@echo "\n$(NAME): $(GREEN)object files were created$(RESET)"
 	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
