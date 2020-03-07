@@ -58,6 +58,6 @@ void	ft_main_gui_init_win_menu(t_list *head)
 	ft_gui_elem_init(&elem->child, "win_menu_image", \
 		(t_gui_coord){0, 0, 0}, \
 		(t_gui_coord){WIN_WIDTH, WIN_HEIGHT, 0});
-	ft_gui_elem_set_image(elem->child, "./Textures/bloody_game.jpg");
+	ft_gui_elem_set_image(elem->child, "./Textures/icon.jpg");
 	ft_gui_elem_set_parent(head, elem->child);
 }

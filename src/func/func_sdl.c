@@ -9,7 +9,7 @@ void		ft_set_window_icon(t_sdl *sdl)
 	if (!(sur_win = SDL_CreateRGBSurface(0, WIN_WIDTH, WIN_HEIGHT, \
 		32, 0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF)))
 		ft_sdl_error(sdl);
-	if (!(sur_img = IMG_Load("Textures/file.png")))
+	if (!(sur_img = IMG_Load("Textures/icon.png")))
 		ft_sdl_error(sdl);
 	if (!(conv_sur_img = SDL_ConvertSurface(sur_img, sur_win->format, 0)))
 		ft_sdl_error(sdl);

@@ -5,8 +5,8 @@ void	ft_unpack(void)
 	if (system("test -d music/ ") != 0 && system("test -d Textures/") != 0 && \
 		system("test -d fonts/") != 0)
 	{
-		if (system("test -f pack.doom") == 0)
-			system("tar -xf pack.doom");
+		if (system("test -f pack.RTv1") == 0)
+			system("tar -xf pack.RTv1");
 		else
 			ft_error("file mne verni gad\n");
 	}
