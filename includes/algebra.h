@@ -129,7 +129,7 @@ t_matrix_4x4	ft_mult_matrix(t_matrix_4x4 this, t_matrix_4x4 rhs);
 */
 t_vector3		ft_vec3_create(t_vector3 *orig, t_vector3 *dest);
 double			ft_vec3_magnitude(t_vector3 *this);
-t_vector3		ft_vec3_add(t_vector3 *this, t_vector3 *rhs);
+t_vector3		ft_vec3_add(t_vector3 this, t_vector3 rhs);
 t_vector3		ft_vec3_sub(t_vector3 *this, t_vector3 *rhs);
 t_vector3		ft_vec3_cross_product(t_vector3 *this, t_vector3 *rhs);
 
