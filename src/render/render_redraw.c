@@ -60,9 +60,9 @@ void		ft_render_redraw(t_wolf3d *w, t_list *dom)
 	vertical = ft_my_malloc(sizeof(t_vector3));
 
 	*orig = (t_vector3){0.0, 0.0, 0.0, 0.0};
-	*left_corner = (t_vector3){-2.0, -1.0, -1.0, 0.0};
-	*horizontal = (t_vector3){4.0, 0.0, 0.0, 0.0};
-	*vertical = (t_vector3){0.0, 2.0, 0.0, 0.0};
+	*left_corner = (t_vector3){-16.0, -9.0, -9.0, 0.0};
+	*horizontal = (t_vector3){32.0, 0.0, 0.0, 0.0};
+	*vertical = (t_vector3){0.0, 18.0, 0.0, 0.0};
 
 	x = 0;
 	y = WIN_HEIGHT - 1;
