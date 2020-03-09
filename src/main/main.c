@@ -15,7 +15,7 @@ void	ft_main(int c, char **v)
 	(void)v;
 	if (c > 2)
 		ft_error("WRONG arguments");
-	ft_unpack();
+	// ft_unpack();
 	w.sdl = sdl_init(w.sdl);
 	ft_gui_init(&w);
 	ft_main_gui_init(&w);
@@ -23,7 +23,7 @@ void	ft_main(int c, char **v)
 	while (w.sdl->running)
 		ft_main_events(&w);
 	ft_clean_sdl(&w);
-	ft_check_folders();
+	// ft_check_folders();
 }
 
 int		main(int c, char **v)
