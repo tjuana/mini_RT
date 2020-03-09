@@ -4,6 +4,11 @@
 	"editor.detectIndentation": false,
 	"editor.tabSize": 4,
 	"files.associations": {
-		"algorithm": "c"
+		"algorithm": "c",
+		"array": "c",
+		"string_view": "c",
+		"iterator": "c",
+		"string": "c",
+		"vector": "c"
 	},
 }

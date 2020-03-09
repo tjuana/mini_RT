@@ -59,7 +59,7 @@ void		ft_render_redraw(t_wolf3d *w, t_list *dom)
 	horizontal = ft_my_malloc(sizeof(t_vector3));
 	vertical = ft_my_malloc(sizeof(t_vector3));
 
-	*orig = (t_vector3){0.0, 0.0, 0.0, 0.0};
+	*orig = (t_vector3){0.0, 0.0, -5.0, 0.0};
 	*left_corner = (t_vector3){-16.0, -9.0, -9.0, 0.0};
 	*horizontal = (t_vector3){32.0, 0.0, 0.0, 0.0};
 	*vertical = (t_vector3){0.0, 18.0, 0.0, 0.0};
@@ -75,8 +75,8 @@ void		ft_render_redraw(t_wolf3d *w, t_list *dom)
 		{
 			u = (float)(x / WIN_WIDTH);
 			v = (float)(y / WIN_HEIGHT);
-			col = ft_color(ft_vec3_add(ft_vec3_add(*left_corner, \
-				ft_vec3_scalar_product(horizontal, u)), ft_vec3_scalar_product(vertical, v)));
+			col = ft_color(ft_vec3_create(*orig , ft_vec3_add(ft_vec3_add(*left_corner, \
+				ft_vec3_scalar_product(horizontal, u)), ft_vec3_scalar_product(vertical, v))));
 			// col = (t_vector3){x / WIN_WIDTH, y / WIN_HEIGHT, 0.2, 0.0};
 			int ir = (255.99 * col.x);
 			int ig = (255.99 * col.y);

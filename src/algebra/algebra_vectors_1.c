@@ -6,18 +6,18 @@
 /*   By: tjuana <tjuana@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 14:19:55 by tjuana            #+#    #+#             */
-/*   Updated: 2020/03/08 19:33:09 by tjuana           ###   ########.fr       */
+/*   Updated: 2020/03/09 19:16:56 by tjuana           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doom.h"
 
-t_vector3	ft_vec3_create(t_vector3 *orig, t_vector3 *dest)
+t_vector3	ft_vec3_create(t_vector3 orig, t_vector3 dest)
 {
-	if (orig == NULL)
-		return ((t_vector3){dest->x, dest->y, dest->z, 0.0});
-	return ((t_vector3){dest->x - orig->x, dest->y - orig->y, dest->z - \
-						orig->z, 0.0});
+	if (orig.x == 0 && orig.y == 0 && orig.z == 0)
+		return ((t_vector3){dest.x, dest.y, dest.z, 0.0});
+	return ((t_vector3){dest.x - orig.x, dest.y - orig.y, dest.z - \
+						orig.z, 0.0});
 }
 
 double		ft_vec3_magnitude(t_vector3 *this)

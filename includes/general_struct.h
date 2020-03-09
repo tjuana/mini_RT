@@ -44,43 +44,10 @@ typedef struct			s_sdl
 	Mix_Music			*music;
 }						t_sdl;
 
-typedef struct			s_time
-{
-	Uint32				time;
-	Uint32				old_time;
-	Uint32				frame_time;
-	Uint32				sound_old_time;
-	Uint32				sound_time;
-	Uint32				change_of_time;
-	Uint32				play_time;
-	Uint32				sound_sum_time;
-	unsigned char		flag;
-}						t_time;
-
 typedef struct			s_wolf3d
 {
-	t_list				*sector;
-	t_list				*sprite;
-	t_list				*enemy;
-	int					sector_status;
 	int					player_status;
-	int					sprite_status;
-	int					enemy_status;
-	int					door_status;
-	int					sector_count;
-	int					sprite_count;
-	int					enemy_count;
-	t_list				*txtr;
-	int					txtr_count;
-	t_list				*vertex;
-	t_list				*sprites;
 	t_sdl				*sdl;
-	t_time				t;
-	int					fd;
-	t_vector3			pos;
-	t_gui_coord			pos_start;
-	t_gui_coord			offset;
-	int					v_d;
 	t_gui				gui;
 	void				*new_data;
 }						t_wolf3d;
