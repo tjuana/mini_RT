@@ -1,20 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algebra_vectors_2.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjuana <tjuana@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/07 14:19:34 by tjuana            #+#    #+#             */
+/*   Updated: 2020/03/08 20:10:31 by tjuana           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "doom.h"
 
-double		ft_vec3_dot_product(t_vector3 this, t_vector3 rhs)
+double		ft_vec3_dot_product(t_vector3 *this, t_vector3 *rhs)
 {
-	double	res;
-
-	res = this.x * rhs.x + this.y * rhs.y + this.z * rhs.z;
-	return (res);
+	return (this->x * rhs->x + this->y * rhs->y + this->z * rhs->z);
 }
 
-double		ft_vec3_cosinus(t_vector3 this, t_vector3 rhs)
+double		ft_vec3_cosinus(t_vector3 *this, t_vector3 *rhs)
 {
-	double	res;
-
-	res = ft_vec3_dot_product(this, rhs) / (ft_vec3_magnitude(this) * \
-	sqrt(pow(rhs.x, 2) + pow(rhs.y, 2) + pow(rhs.z, 2)));
-	return (res);
+	return (ft_vec3_dot_product(this, rhs) / (ft_vec3_magnitude(this) * \
+	sqrt(ft_vec3_dot_product(rhs, rhs))));
 }
 
 /*
@@ -24,15 +30,9 @@ double		ft_vec3_cosinus(t_vector3 this, t_vector3 rhs)
 ** **************************************************************************
 */
 
-t_vector3	ft_vec3_opposite(t_vector3 this)
+t_vector3	ft_vec3_opposite(t_vector3 *this)
 {
-	t_vector3	res;
-
-	res.x = -this.x;
-	res.y = -this.y;
-	res.z = -this.z;
-	res.w = this.w;
-	return (res);
+	return ((t_vector3){-this->x, -this->y, -this->z, this->w});
 }
 
 /*
@@ -42,15 +42,9 @@ t_vector3	ft_vec3_opposite(t_vector3 this)
 ** **************************************************************************
 */
 
-t_vector3	ft_vec3_scalar_product(t_vector3 this, double k)
+t_vector3	ft_vec3_scalar_product(t_vector3 *this, double k)
 {
-	t_vector3	res;
-
-	res.x = this.x * k;
-	res.y = this.y * k;
-	res.z = this.z * k;
-	res.w = this.w;
-	return (res);
+	return ((t_vector3){this->x * k, this->y * k, this->z * k, this->w});
 }
 
 /*
@@ -60,18 +54,12 @@ t_vector3	ft_vec3_scalar_product(t_vector3 this, double k)
 ** **************************************************************************
 */
 
-t_vector3	ft_vec3_normalize(t_vector3 vtc)
+t_vector3	ft_vec3_normalize(t_vector3 *vtc)
 {
-	t_vector3	v0;
-	t_vector3	v1;
+	double		v_len;
 
-	if (ft_vec3_magnitude(vtc) == 1)
-		return (vtc);
-	v0.x = 0;
-	v0.y = 0;
-	v0.z = 0;
-	v1.x = vtc.x / ft_vec3_magnitude(vtc);
-	v1.y = vtc.y / ft_vec3_magnitude(vtc);
-	v1.z = vtc.z / ft_vec3_magnitude(vtc);
-	return (ft_vec3_create(&v0, &v1));
+	v_len = ft_vec3_magnitude(vtc);
+	if (v_len == 1)
+		return (*vtc);
+	return ((t_vector3){vtc->x / v_len, vtc->y / v_len, vtc->z / v_len, 0.0});
 }

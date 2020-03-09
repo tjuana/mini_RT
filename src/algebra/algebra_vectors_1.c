@@ -1,62 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algebra_vectors_1.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjuana <tjuana@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/07 14:19:55 by tjuana            #+#    #+#             */
+/*   Updated: 2020/03/08 19:33:09 by tjuana           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "doom.h"
 
 t_vector3	ft_vec3_create(t_vector3 *orig, t_vector3 *dest)
 {
-	t_vector3	this;
-	t_vector3	orig2;
-
 	if (orig == NULL)
-	{
-		orig2.x = 0;
-		orig2.y = 0;
-		orig2.z = 0;
-		orig2.w = 1;
-		this.x = dest->x - orig2.x;
-		this.y = dest->y - orig2.y;
-		this.z = dest->z - orig2.z;
-		return (this);
-	}
-	this.x = dest->x - orig->x;
-	this.y = dest->y - orig->y;
-	this.z = dest->z - orig->z;
-	this.w = 0;
-	return (this);
+		return ((t_vector3){dest->x, dest->y, dest->z, 0.0});
+	return ((t_vector3){dest->x - orig->x, dest->y - orig->y, dest->z - \
+						orig->z, 0.0});
 }
 
-double		ft_vec3_magnitude(t_vector3 this)
+double		ft_vec3_magnitude(t_vector3 *this)
 {
-	return ((double)(sqrt(pow(this.x, 2) + pow(this.y, 2) + pow(this.z, 2))));
+	return ((double)(sqrt(ft_vec3_dot_product(this, this))));
 }
 
 t_vector3	ft_vec3_add(t_vector3 this, t_vector3 rhs)
 {
-	t_vector3	res;
-
-	res.x = this.x + rhs.x;
-	res.y = this.y + rhs.y;
-	res.z = this.z + rhs.z;
-	res.w = 0;
-	return (res);
+	return ((t_vector3){this.x + rhs.x, this.y + rhs.y, this.z + \
+							rhs.z, 0.0});
 }
 
-t_vector3	ft_vec3_sub(t_vector3 this, t_vector3 rhs)
+t_vector3	ft_vec3_sub(t_vector3 *this, t_vector3 *rhs)
 {
-	t_vector3	res;
-
-	res.x = this.x - rhs.x;
-	res.y = this.y - rhs.y;
-	res.z = this.z - rhs.z;
-	res.w = 0;
-	return (res);
+	return ((t_vector3){this->x - rhs->x, this->y - rhs->y, this->z - \
+							rhs->z, 0.0});
 }
 
-t_vector3	ft_vec3_cross_product(t_vector3 this, t_vector3 rhs)
+t_vector3	ft_vec3_cross_product(t_vector3 *this, t_vector3 *rhs)
 {
-	t_vector3	res;
-
-	res.x = this.y * rhs.z - this.z * rhs.y;
-	res.y = this.z * rhs.x - this.x * rhs.z;
-	res.z = this.x * rhs.y - this.y * rhs.x;
-	res.w = 0;
-	return (res);
+	return ((t_vector3){this->y * rhs->z - this->z * rhs->y, this->z * \
+	rhs->x - this->x * rhs->z, this->x * rhs->y - this->y * rhs->x, 0.0});
 }

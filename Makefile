@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: dorange- <dorange-@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 7777/07/07 11:40:58 by tjuana            #+#    #+#              #
-#    Updated: 2020/03/05 17:47:32 by dorange-         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 # Project name
 NAME = RTv1
 
@@ -17,8 +5,8 @@ NAME = RTv1
 GAME_NAME = RTv1
 
 # Сompiler settings
-CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CC = gcc -g
+FLAGS = -Wall -Werror -Wextra
 
 # SDL2 settings
 USERNAME = $(shell whoami)
@@ -244,7 +232,7 @@ dd:
 	rm $(NAME)
 
 fclean: clean
-	@rm -r $(LIBFT)
+	@rm -rf $(LIBFT)
 	@echo "$(NAME): $(RED)$(LIBFT) was deleted$(RESET)"
 	@rm -f $(NAME)
 	@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)"

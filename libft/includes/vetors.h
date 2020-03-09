@@ -6,10 +6,9 @@
 /*   By: tjuana <tjuana@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 18:00:00 by tjuana            #+#    #+#             */
-/*   Updated: 2020/01/21 19:05:21 by tjuana           ###   ########.fr       */
+/*   Updated: 2020/03/07 12:37:33 by tjuana           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef VECTORS_H
 # define VECTORS_H
@@ -27,9 +26,9 @@
 #  define __lvec_always_inline static __always_inline
 # endif
 
-#  define V4DF typedef double t_v4df __attribute__((vector_size(32),aligned))
-#  define V2DF typedef double t_v2df __attribute__((vector_size(16),aligned))
-#  define V4DU typedef size_t t_v4du __attribute__((vector_size(32),aligned))
+# define V4DF typedef double t_v4df __attribute__((vector_size(32),aligned))
+# define V2DF typedef double t_v2df __attribute__((vector_size(16),aligned))
+# define V4DU typedef size_t t_v4du __attribute__((vector_size(32),aligned))
 
 V4DF;
 V2DF;
