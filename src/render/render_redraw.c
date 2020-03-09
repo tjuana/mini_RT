@@ -27,7 +27,7 @@ t_vector3	ft_color(t_vector3 dir)
 	t_vector3	vec_052;
 
 	if (hit_sphere((t_vector3){0.0, 0.0, -1.0, 0.0}, (t_vector3){0.0, 0.0, 0.0, 0.0}, dir, 0.5))
-		return ((t_vector3){0.5, 0.0, 0.0, 0.0});
+		return ((t_vector3){0.5, 0.3, 1.0, 0.0});
 	vec_1 = (t_vector3){1.0, 1.0, 1.0, 0.0};
 	vec_05 = (t_vector3){0.5, 0.7, 1.0, 0.0};
 	unit_dir = ft_vec3_normalize(&dir);

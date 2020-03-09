@@ -6,7 +6,7 @@ GAME_NAME = RTv1
 
 # Сompiler settings
 CC = gcc -g
-FLAGS = 
+FLAGS = -Wall -Werror -Wextra
 
 # SDL2 settings
 USERNAME = $(shell whoami)
